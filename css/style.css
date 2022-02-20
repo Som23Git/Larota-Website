@@ -1,0 +1,224 @@
+/* //CSS Style Sheet */
+/* Load the Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
+:root{
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+}
+
+/* Reset The Margin and Padding so that you can align as per your requirements */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato',sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1,h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+}
+
+/* Navbar Styles */
+
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;               /* Larota - Color of the text */
+    height: 70px;
+}
+
+/* To make the UL items horizontal instead of vertical */
+.navbar ul{
+    display: flex;
+}
+
+/* Links inside the UL i.e. anchor links */
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+/* Hover Effect on the Links*/
+.navbar a:hover{
+    border-bottom: 2px #fff solid;
+}
+
+
+/* DID NOT Understand This */
+/* As per  the explanation it is done due to space-between provided i the .flex and it is set to Center otherwise, the .flex should have justify-content: center */
+.navbar .flex{
+    justify-content: space-between;         
+}
+/* DID NOT Understand This */
+
+
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;             /*so we can position any elements Absolute within so we can*/
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow: visible;
+    grid-template-columns: 55% 45%;     /*Providing Spacing for the First and Second Grid */
+    gap: 30px;
+}
+
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+
+    /*FORGOT TO SHOW IN THE VIDEO BUT WAS HIGHLIGHTED WHILE RENDERING*/
+    justify-self: flex-end;     
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+/* This is to style the input fields within in the form or card */
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+/* Whenever you select an input, it will not showcase the outline like a box or rectangle or like a Margin */
+.showcase-form input:focus {
+    outline: none;
+}
+
+/* Pseudo Selectors :: SLANT in the Page is not Seen But, to see that kindly change the background property and see the reflection in the website*/
+.showcase::before, 
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+/*STATS*/
+
+.stats{
+    padding-top: 100px;
+}
+
+.stats-heading{
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*Cli*/
+.cli .grid{
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* Cloud */
+
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+
+/* Languages */
+.languages .flex{
+    flex-wrap: wrap;
+}
+.languages .card {
+    text-align: center;             /*Adding text-align here because there are 7 cards so we can have the text-align for all*/
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+
+/* Footer */
+
+.footer .social a{
+    margin: 0 10px;          /*Adding Margins(Left-Right) for the Social Icons in the footer*/
+}
+
+/* Tablets and under */
+@media(max-width: 768px){
+
+}
+
+
+
+/* Mobile */
+@media(max-width: 500px) {
+    
+}
