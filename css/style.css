@@ -47,6 +47,7 @@ img{
     width: 100%;
 }
 
+/* Docs Code Styles */
 code, 
 pre {
     background: #333;
@@ -110,6 +111,10 @@ pre {
     gap: 30px;
 }
 
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
+
 .showcase-form{
     position: relative;
     top: 60px;
@@ -119,7 +124,8 @@ pre {
     z-index: 100;
 
     /*FORGOT TO SHOW IN THE VIDEO BUT WAS HIGHLIGHTED WHILE RENDERING*/
-    justify-self: flex-end;     
+    justify-self: flex-end;    
+    animation: slideInFromRight 1s ease-in; 
 }
 
 .showcase-form .form-control {
@@ -161,6 +167,7 @@ pre {
 
 .stats{
     padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
 }
 
 .stats-heading{
@@ -276,6 +283,47 @@ pre {
     margin: 0 10px;          /*Adding Margins(Left-Right) for the Social Icons in the footer*/
 }
 
+/* Animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* Tablets and under */
 @media(max-width: 768px){
     /* body{
@@ -286,7 +334,9 @@ pre {
     .showcase .grid,
     .stats .grid,
     .cli .grid,
-    .cloud .grid {
+    .cloud .grid,
+    .features-main .grid,
+    .docs-main .grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
@@ -298,17 +348,36 @@ pre {
     .showcase-text {
         text-align: center;
         margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
     }
 
     .showcase-form{
         justify-self: center;
         margin: auto;
+        animation: slideInFromBottom 1s ease-in;
     }
 
     .cli .grid > *:first-child{
         grid-column: 1;
         grid-row: 1;
     }
+
+    .features-head,
+    .features-sub-head,
+    .docs-head {
+        text-align: center;
+    }
+    .features-head img,
+    .features-sub-head img,
+    .docs-head img {
+        justify-self: center;
+    }
+
+    .features-main .grid > *:first-child, 
+    .features-main .grid > *:nth-child(2){
+        grid-column: 1;
+    }
+
 }
 
 /* Mobile */
